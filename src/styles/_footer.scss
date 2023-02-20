@@ -1,0 +1,36 @@
+.social {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+    li {
+        img {
+            width: 50px;
+        }
+    }
+}
+.footer-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    span {
+        font-family: 'Next';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 15px;
+        color: #E4E4E4;
+    }
+}
+footer {
+    padding: 26px 20px 26px 20px;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right:  auto;
+    border-top: 1px solid #E4E4E4;
+    img {
+        filter: invert(120%) sepia(93%) saturate(1352%) hue-rotate(87deg) brightness(119%) contrast(119%);
+    }
+}

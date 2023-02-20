@@ -1,0 +1,77 @@
+@import './container';
+@import './header';
+@import './main';
+@import './reset';
+@import './media';
+@import './footer';
+@font-face {
+	font-family: 'Nico Moji';
+	font-display: swap;
+	src: url("../fonts/nico/Nico-Moji.ttf.eot");
+	src: local("O"), url("../fonts/nico/Nico-Moji.ttf.woff") format("woff"), 
+			url("../fonts/nico/Nico-Moji.ttf.svg") format("svg");
+	font-weight: normal;
+	font-style: normal;
+}
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+body {
+	background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
+	img {
+        -moz-user-select: none; 
+        -webkit-user-select: none; 
+        -ms-user-select: none;
+        user-select: none;
+    }
+	color: black;
+}
+.dark {
+	background: linear-gradient(101.56deg, #ffffff 1.56%, #ffffff 95.55%);
+	
+	main {
+		span {
+			color: black;
+		}
+		h1 {
+			color: #000000;
+		}
+	}
+	header, footer {
+		background: linear-gradient(101.56deg, #2C2C2C 1.56%, #1C1C1C 95.55%);
+	}
+	.content-portfolio {
+		background: #ffffff;
+		border: 1px solid black;
+		span, div {
+			color: #1C1C1C;
+		}
+		img {
+			border: 1px solid black;
+		}
+	}
+	.info-block {
+		h1 {
+			color: #a39b9b;
+		}
+	}
+	.items {
+		span {
+			color: white;
+		}
+	}
+}
+@font-face {
+	font-family: 'Next';
+	font-display: swap;
+	src: url("../fonts/next/Nextart.woff");
+	src: local("O"), url("../fonts/next/Nextart.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
+@font-face {
+	font-family: 'Aradora';
+	font-display: swap;
+	src: url("../fonts/aradora/ArodoraPro-Light.woff");
+	src: local("O"), url("../fonts/aradora/ArodoraPro-Light.woff") format("woff");
+	font-weight: normal;
+	font-style: normal;
+}
