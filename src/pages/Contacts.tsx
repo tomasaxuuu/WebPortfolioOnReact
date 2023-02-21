@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import { contacts } from "../components/Interfaces";
 import { Item } from "../components/Item";
+import { typeItem } from "../components/Interfaces";
 export const ContactsPage: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [name, setName] = useState<string>('');
@@ -46,6 +46,14 @@ export const ContactsPage: React.FC = () => {
             setFormValid(true);
         }
     }, [emailError, nameError])
+
+    const[contacts, setContactsItems] = useState<Array<typeItem>>([]);
+
+    useEffect(() => {
+        fetch(" http://localhost:3000/contacts")
+        .then(response => response.json())
+        .then(data => setContactsItems(data))
+    }, [])
     
     return ( 
         <>

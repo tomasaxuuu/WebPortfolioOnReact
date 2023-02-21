@@ -1,16 +1,20 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
 import { Item } from "./Item";
-import { items } from "./Interfaces";
+import { typeItem } from "./Interfaces";
 
 export const Items: React.FC = () => {
-    
+    const [items, setItems] = useState<Array<typeItem>>([])
+    useEffect(() => {
+        fetch("http://localhost:3000/items")
+        .then(response => response.json())
+        .then(data => setItems(data));
+    }, []);
     return (
         <>
             <ul className="items">
-                {items.map((el) => {
+                {items.map(({id, img, title}) => {
                     return (
-                        <Item key={el.id} img={el.img} title={el.title}/>
+                        <Item key={id} img={img} title={title}/>
                     )
                 })}
             </ul>

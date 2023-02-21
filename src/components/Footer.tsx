@@ -1,21 +1,27 @@
-import React from "react";
-import vk from "../images/footer/vk.svg";
-import github from "../images/footer/gh.svg";
-import tg from "../images/footer/tg.svg";
-import gmail from "../images/footer/gmail.svg";
-import lol from "../images/footer/lol.svg";
-import { Img } from "./Img";
+import React, { useEffect, useState } from "react";
+
+import { typeItem } from "./Interfaces";
+import { Item } from "./Item";
 export const Footer: React.FC = () => {
+
+    const[footerImg, setImg] = useState<Array<typeItem>>([])
+
+    useEffect(() => {
+        fetch(" http://localhost:3000/footerImgs")
+        .then(response => response.json())
+        .then(data => setImg(data))
+    }, [])
+
     return (
         <footer>
             <div className="wrap">
                 <div className="footer-row">
                     <ul className="social">
-                        <li><Img src={vk} alt='vkontakte'/></li>
-                        <li><Img src={tg} alt='telegram'/></li>
-                        <li><Img src={github} alt='github'/></li>
-                        <li><Img src={gmail} alt='gmail'/></li>
-                        <li><Img src={lol} alt='leagueOfLegends'/></li>
+                        {footerImg.map(el => {
+                            return (
+                                <Item key={el.id} img={el.img} alt={el.alt}/>
+                            )
+                        })}
                     </ul>
                     <span>© 2023 - frontend-dev.com</span>
                 </div>

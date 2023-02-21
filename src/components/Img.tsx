@@ -1,13 +1,11 @@
 import React from "react";
+import { ImgType } from "./Interfaces";
 
-interface ImgType {
-    src: string;
-    alt: string;
-}
+
 
 export const Img: React.FC<ImgType> = ({src, alt}) => {
     return (
-        <img src={src} alt ={alt}/>
+        <img src={src} alt={alt}/>
     );
 }
  

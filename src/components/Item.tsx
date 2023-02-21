@@ -1,11 +1,11 @@
 import React from "react";
-import { IItem } from "./Interfaces";
+import { typeItem } from "./Interfaces";
 
-export const Item: React.FC<IItem> = ({ img, title }: IItem) => {
+export const Item: React.FC<typeItem> = ({ img, title, alt }) => {
   return (
     <>
       <li>
-        <img src={img} />
+        <img src={img} alt={alt} />
         <span>{title}</span>
       </li>
     </>
