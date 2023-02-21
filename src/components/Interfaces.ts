@@ -10,3 +10,8 @@ export interface ImgType {
     src: string;
     alt: string;
 }
+
+export interface ILink {
+    path: string;
+    title: string;
+}
