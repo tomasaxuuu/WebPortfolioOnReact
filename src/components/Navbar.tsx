@@ -6,6 +6,7 @@ import logo from "../images/header/logo.svg";
 import { ItemNav } from "./NavMeniItem";
 import { BtnDarkMode } from "./BtnDark";
 import { navPaths } from "./Interfaces";
+import { Span } from "./SpanComponent";
 
 export const Navbar: React.FC = () => {
     return (
@@ -14,7 +15,7 @@ export const Navbar: React.FC = () => {
                 <div className="header-nav">
                     <div className="logo-block">
                         <Img src={logo} alt='logotype'/>
-                        <span>Notitanic</span>
+                        <Span value="Notitanic" />
                     </div>
                     <nav className="nav-menu">
                         <ul>

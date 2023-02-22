@@ -36,7 +36,6 @@ export const BtnDarkMode: React.FC = () => {
 
     return (
         <button ref={btnRef} className="dark-mode-btn" onClick={toggleTheme}>
-            
             <Img src={dark} alt="dark" />
             <Img src={sun} alt="light" />
         </button>

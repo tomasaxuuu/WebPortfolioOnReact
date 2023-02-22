@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from "react";
-
 import { typeItem } from "./Interfaces";
 import { Item } from "./Item";
+import { Span } from "./SpanComponent";
+
 export const Footer: React.FC = () => {
 
     const[footerImg, setImg] = useState<Array<typeItem>>([])
@@ -23,7 +24,7 @@ export const Footer: React.FC = () => {
                             )
                         })}
                     </ul>
-                    <span>© 2023 - frontend-dev.com</span>
+                    <Span value="© 2023 - frontend-dev.com" />
                 </div>
             </div>
         </footer>

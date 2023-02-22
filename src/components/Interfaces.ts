@@ -49,3 +49,8 @@ export const navPaths: NavItems[] = [
         title: "Contact",
     },
 ]
+
+export interface Ispan {
+    className?: string;
+    value: string;
+}

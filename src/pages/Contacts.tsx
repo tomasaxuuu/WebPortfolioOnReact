@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Item } from "../components/Item";
 import { typeItem } from "../components/Interfaces";
+import { Span } from "../components/SpanComponent";
 export const ContactsPage: React.FC = () => {
     const [email, setEmail] = useState<string>('');
     const [name, setName] = useState<string>('');
@@ -75,7 +76,7 @@ export const ContactsPage: React.FC = () => {
                         </div>
                         <div className="right-form">
                             <h3>Contact me</h3>
-                            <span className="span-form">I`m open for any suggestion or just to have a chat</span>
+                            <Span className="span-form" value="I`m open for any suggestion or just to have a chat" />
                             <ul>
                                 {contacts.map(({id, img, title}) => {
                                     return (

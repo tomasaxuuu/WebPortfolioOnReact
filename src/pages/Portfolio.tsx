@@ -5,6 +5,7 @@ import arrowright from "../images/main/right.svg";
 import card1 from "../images/main/content-1.png";
 import card2 from "../images/main/content-2.png";
 import card3 from "../images/main/content-3.jpg";
+import { Span } from "../components/SpanComponent";
 export const Portfolio: React.FC = () => {
     const [index, setIndex] = useState<number>(0);
     const nextImg = (): void => {
@@ -53,10 +54,10 @@ export const Portfolio: React.FC = () => {
                                 accumsan bibendum magna. 
                                 Nullam hendrerit cursus purus, sit amet viverra arcu gravida vel.
                             </div>
-                            <span>More</span>
+                            <Span value="More"/>
                         </div>
                     </div>
-                    <div onClick={prevImg}  className="left-arrow"><Img src={arrowright} alt='arrow-left'/></div>
+                    <div onClick={prevImg} className="left-arrow"><Img src={arrowright} alt='arrow-left'/></div>
                     <div onClick={nextImg} className="right-arrow"><Img src={arrowleft} alt='arrow-right' /></div>
                 </div>
             </div>
