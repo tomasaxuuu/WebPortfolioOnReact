@@ -65,9 +65,9 @@ export const ContactsPage: React.FC = () => {
                             <h3>Send us a message</h3>
                             <form>
                                 {(nameTouch && nameError) && <div className="error">{nameError}</div>}
-                                <input onChange={e => nameHandler(e)} value={name} onBlur={(e) => ErrorHundler(e)} name="name"type="text" placeholder="Name"></input>
+                                <input onChange={e => nameHandler(e)} value={name} onBlur={(e) => ErrorHundler(e)} name="name" type="text" placeholder="Name"></input>
                                 {(emailTouch && emailError) && <div className="error">{emailError}</div>}
-                                <input onChange={e => emailHandler(e)} value={email} onBlur={(e) => ErrorHundler(e)} name="email"type="email" placeholder="Email"></input>
+                                <input onChange={e => emailHandler(e)} value={email} onBlur={(e) => ErrorHundler(e)} name="email" type="email" placeholder="Email"></input>
                                 <input type="text" placeholder="Subject"></input>
                                 <textarea placeholder="Message"></textarea>
                                 <button disabled={!form} type="submit">Send message</button>

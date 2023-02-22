@@ -3,9 +3,9 @@ import { ImgType } from "./Interfaces";
 
 
 
-export const Img: React.FC<ImgType> = ({src, alt}) => {
+export const Img: React.FC<ImgType> = ({className, src, alt}) => {
     return (
-        <img src={src} alt={alt}/>
+        <img className={className} src={src} alt={alt}/>
     );
 }
  
