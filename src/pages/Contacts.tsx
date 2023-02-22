@@ -3,6 +3,7 @@ import { Item } from "../components/Item";
 import { typeItem } from "../components/Interfaces";
 import { Span } from "../components/SpanComponent";
 export const ContactsPage: React.FC = () => {
+    
     const [email, setEmail] = useState<string>('');
     const [name, setName] = useState<string>('');
     // определения касаний по полям

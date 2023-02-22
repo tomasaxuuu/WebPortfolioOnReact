@@ -4,6 +4,7 @@ import { Img } from "./Img";
 import { NavLink } from "react-router-dom";
 import { Span } from "./SpanComponent";
 export const Header: React.FC = () => {
+    
     const [btnTheme, setTheme] = useState<boolean>(false)
     return (
         <div className="header-row">

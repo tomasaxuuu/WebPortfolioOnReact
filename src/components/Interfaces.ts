@@ -54,3 +54,21 @@ export interface Ispan {
     className?: string;
     value: string;
 }
+
+export const MyCollection = [
+    {
+        id: 1,
+        h3: "Landing Ice-cream",
+        imgPath: "./src/images/main/content-1.png",
+    },
+    {
+        id: 2,
+        h3: "Landing Neo",
+        imgPath: "./src/images/main/content-2.png",
+    },
+    {
+        id: 3,
+        h3: "Landing Pages",
+        imgPath: "./src/images/main/content-3.jpg",
+    }
+];

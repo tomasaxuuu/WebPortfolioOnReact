@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { Img } from "../components/Img";
 import arrowleft from "../images/main/left.svg";
 import arrowright from "../images/main/right.svg";
-import card1 from "../images/main/content-1.png";
-import card2 from "../images/main/content-2.png";
-import card3 from "../images/main/content-3.jpg";
 import { Span } from "../components/SpanComponent";
+import { MyCollection } from "../components/Interfaces";
+
 export const Portfolio: React.FC = () => {
     const [index, setIndex] = useState<number>(0);
     const nextImg = (): void => {
@@ -23,23 +22,6 @@ export const Portfolio: React.FC = () => {
         }
     } 
 
-    const MyCollection = [
-        {
-            id: 1,
-            h3: "Landing Ice-cream",
-            imgPath: card1,
-        },
-        {
-            id: 2,
-            h3: "Landing Neo",
-            imgPath: card2,
-        },
-        {
-            id: 3,
-            h3: "Landing Pages",
-            imgPath: card3,
-        }
-    ];
        
     return (
         <>
