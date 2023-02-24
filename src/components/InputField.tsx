@@ -7,9 +7,11 @@ interface IInput  {
     nameValue?: string;
     typeValue: string;
     placeholderValue: string;
+    refI: React.RefObject<HTMLInputElement>;
 }
 export const Input: React.FC<IInput> = 
     ({
+        refI,
         changeInput, 
         valueInput, 
         BlurInput, 
@@ -18,7 +20,8 @@ export const Input: React.FC<IInput> =
         placeholderValue,
     }) => {   
         return ( 
-            <input 
+            <input
+                ref={refI}
                 onChange={changeInput}
                 value={valueInput}
                 onBlur={BlurInput}

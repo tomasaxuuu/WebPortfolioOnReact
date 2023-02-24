@@ -60,7 +60,7 @@ export const ContactsPage: React.FC = () => {
     }, [])
     
     const sendMessege = () => {
-        ref.current!.value = ''
+        ref.current!.value = '';
     }
     return ( 
         <>
@@ -73,6 +73,7 @@ export const ContactsPage: React.FC = () => {
                             <form>
                                 {(nameTouch && nameError) && <div className="error">{nameError}</div>}
                                 <Input
+                                    refI={ref}
                                     valueInput={name}
                                     nameValue="name"
                                     typeValue="text"
@@ -82,6 +83,7 @@ export const ContactsPage: React.FC = () => {
                                 />
                                 {(emailTouch && emailError) && <div className="error">{emailError}</div>}
                                 <Input
+                                    refI={ref}
                                     valueInput={email}
                                     nameValue="email"
                                     typeValue="email"
@@ -89,7 +91,7 @@ export const ContactsPage: React.FC = () => {
                                     changeInput={e => emailHandler(e)}
                                     BlurInput={e => ErrorHundler(e)}
                                 />
-                                <Input typeValue="text" placeholderValue="Subject" />
+                                <Input refI={ref} typeValue="text" placeholderValue="Subject" />
                                 <textarea placeholder="Message"></textarea>
                                 <button onClick={sendMessege} disabled={!form} type="submit">Send message</button>
                             </form>
