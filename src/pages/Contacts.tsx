@@ -2,6 +2,8 @@ import React, { useEffect, useRef, useState } from "react";
 import { Item } from "../components/Item";
 import { typeItem } from "../components/Interfaces";
 import { Span } from "../components/SpanComponent";
+import { Input } from "../components/InputField";
+
 export const ContactsPage: React.FC = () => {
     const ref = useRef<HTMLInputElement>(null)
     const [email, setEmail] = useState<string>('');
@@ -70,10 +72,24 @@ export const ContactsPage: React.FC = () => {
                             <h3>Send us a message</h3>
                             <form>
                                 {(nameTouch && nameError) && <div className="error">{nameError}</div>}
-                                <input ref={ref}onChange={e => nameHandler(e)} value={name} onBlur={(e) => ErrorHundler(e)} name="name" type="text" placeholder="Name"></input>
+                                <Input
+                                    valueInput={name}
+                                    nameValue="name"
+                                    typeValue="text"
+                                    placeholderValue="Name"
+                                    changeInput={e => nameHandler(e)}
+                                    BlurInput={e => ErrorHundler(e)}
+                                />
                                 {(emailTouch && emailError) && <div className="error">{emailError}</div>}
-                                <input ref={ref}onChange={e => emailHandler(e)} value={email} onBlur={(e) => ErrorHundler(e)} name="email" type="email" placeholder="Email"></input>
-                                <input type="text" placeholder="Subject"></input>
+                                <Input
+                                    valueInput={email}
+                                    nameValue="email"
+                                    typeValue="email"
+                                    placeholderValue="Email"
+                                    changeInput={e => emailHandler(e)}
+                                    BlurInput={e => ErrorHundler(e)}
+                                />
+                                <Input typeValue="text" placeholderValue="Subject" />
                                 <textarea placeholder="Message"></textarea>
                                 <button onClick={sendMessege} disabled={!form} type="submit">Send message</button>
                             </form>
