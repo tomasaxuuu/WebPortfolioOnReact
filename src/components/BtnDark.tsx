@@ -25,7 +25,7 @@ export const BtnDarkMode: React.FC = () => {
     // эффект смены темы, а именно добавления и удаления классов при нажатии на кнопку смены темы, зависит от переменной из хука состояния
     // ref - текущий элемент
     useEffect(() => {
-        if (themeClick === "dark") {
+        if (themeClick === "light") {
             document.body.classList.add("dark");
             btnRef.current!.classList.add("dark-mode-btn--active");
         } else {
