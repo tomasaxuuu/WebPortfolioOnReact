@@ -313,6 +313,7 @@ footer {
     text-align: center;
     padding-bottom: 40px;
   }
+  
 }
 .contact-menu {
   display: flex;
@@ -469,4 +470,24 @@ form {
 }
 .error {
   color: red;
+}
+.buttonShow {
+  cursor: pointer;
+  padding: 10px;
+  background: #ffffff;
+  text-align: center;
+  width: 50%;
+  height: 100%;
+  margin: 0 auto;
+  max-width: 200px;
+  border: 1px solid black;
+  margin-bottom: 20px;
+  border-radius: 25px;  
+  a {
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    color: #000000;
+    text-align: center;
+  }
 }

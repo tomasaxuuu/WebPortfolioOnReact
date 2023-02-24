@@ -46,7 +46,7 @@ export const navPaths: NavItems[] = [
     {
         id: 4,
         path: "/contacts",
-        title: "Contact",
+        title: "Contacts",
     },
 ]
 
