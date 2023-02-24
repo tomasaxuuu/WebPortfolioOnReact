@@ -5,19 +5,18 @@ interface IInput  {
     valueInput?: string;
     BlurInput?: (e: any) => void;
     nameValue?: string;
-    typeValue?: string;
-    placeholderValue?: string;
+    typeValue: string;
+    placeholderValue: string;
 }
 export const Input: React.FC<IInput> = 
-    (
-        {changeInput, 
+    ({
+        changeInput, 
         valueInput, 
         BlurInput, 
         nameValue, 
         typeValue, 
         placeholderValue,
-        }
-    ) => {   
+    }) => {   
         return ( 
             <input 
                 onChange={changeInput}

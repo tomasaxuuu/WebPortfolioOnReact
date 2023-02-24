@@ -1,9 +1,24 @@
-import React from "react";
-import { Items } from "../components/Items";
+import React, { useEffect, useState } from "react";
+import { typeItem } from "../components/Interfaces";
+import { Item } from "../components/Item";
+
+
 export const HomePage: React.FC = () => {
-    return (  
+    const [items, setItems] = useState<Array<typeItem>>([])
+    useEffect(() => {
+        fetch("http://localhost:3000/items")
+        .then(response => response.json())
+        .then(data => setItems(data));
+    }, []);
+    return (
         <>
-            <Items />
+            <ul className="items">
+                {items.map(({id, img, title}) => {
+                    return (
+                        <Item key={id} img={img} title={title}/>
+                    )
+                })}
+            </ul>
         </>
     );
 }
