@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Item } from "../components/Item";
 import { typeItem } from "../components/Interfaces";
 import { Span } from "../components/SpanComponent";
 export const ContactsPage: React.FC = () => {
-    
+    const ref = useRef<HTMLInputElement>(null)
     const [email, setEmail] = useState<string>('');
     const [name, setName] = useState<string>('');
     // определения касаний по полям
@@ -57,6 +57,9 @@ export const ContactsPage: React.FC = () => {
         .then(data => setContactsItems(data))
     }, [])
     
+    const sendMessege = () => {
+        ref.current!.value = ''
+    }
     return ( 
         <>
             <div className="contacts-col">
@@ -67,12 +70,12 @@ export const ContactsPage: React.FC = () => {
                             <h3>Send us a message</h3>
                             <form>
                                 {(nameTouch && nameError) && <div className="error">{nameError}</div>}
-                                <input onChange={e => nameHandler(e)} value={name} onBlur={(e) => ErrorHundler(e)} name="name" type="text" placeholder="Name"></input>
+                                <input ref={ref}onChange={e => nameHandler(e)} value={name} onBlur={(e) => ErrorHundler(e)} name="name" type="text" placeholder="Name"></input>
                                 {(emailTouch && emailError) && <div className="error">{emailError}</div>}
-                                <input onChange={e => emailHandler(e)} value={email} onBlur={(e) => ErrorHundler(e)} name="email" type="email" placeholder="Email"></input>
+                                <input ref={ref}onChange={e => emailHandler(e)} value={email} onBlur={(e) => ErrorHundler(e)} name="email" type="email" placeholder="Email"></input>
                                 <input type="text" placeholder="Subject"></input>
                                 <textarea placeholder="Message"></textarea>
-                                <button disabled={!form} type="submit">Send message</button>
+                                <button onClick={sendMessege} disabled={!form} type="submit">Send message</button>
                             </form>
                         </div>
                         <div className="right-form">
